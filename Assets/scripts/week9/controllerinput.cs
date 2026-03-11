@@ -7,6 +7,8 @@ public class controllerinput : MonoBehaviour
     public float speed = 5;
     public Vector2 movement;
     public AudioSource sfx;
+    public Component knife;
+    public Vector2 direction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,9 +19,10 @@ public class controllerinput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position += (Vector3)movement * speed * Time.deltaTime;
+        transform.position += (Vector3)movement * speed * Time.deltaTime;
 
-        transform.position = movement;
+        //transform.position = movement;
+        knife.transform.position += (Vector3)direction * speed * Time.deltaTime;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -40,5 +43,10 @@ public class controllerinput : MonoBehaviour
     {
         //same as mouse.current.position.readvalue()
         movement = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        direction = context.ReadValue<Vector2>();
     }
 }
