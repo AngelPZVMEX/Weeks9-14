@@ -9,14 +9,31 @@ public class buildsite : MonoBehaviour
     public GameObject chest;
     public GameObject bench;
 
+    Coroutine statuecoroutine;
+    Coroutine chestcoroutine;
+    Coroutine benchcoroutine;
+    Coroutine buildroutine;
+
     void Start()
     {
         statue.transform.localScale = Vector2.zero;
        chest.transform.localScale = Vector2.zero;
        bench.transform.localScale = Vector2.zero;
     }
+  //  public void PlaceBuild
+  //  {
+  //      buildroutine = StartCoroutine(build());
 
-  
+
+  //  }
+
+  //IEnumerator build ()
+  //  {
+  //      yield return statuecoroutine = StartCoroutine(growstatue());
+  //      yield return chestcoroutine = StartCoroutine(Growchest());
+  //      yield return benchcoroutine = StartCoroutine (growbench());
+
+  //  }
     IEnumerator growstatue()
     {
      
