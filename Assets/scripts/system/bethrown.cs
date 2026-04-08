@@ -1,14 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class bethrown : MonoBehaviour
 {
     public Transform start;
     public Transform glove;
     public float t = 0;
+    public float p = 1;
 
     public Transform balltransform;
     public AnimationCurve curve ;
+    public AnimationCurve fast;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +25,10 @@ public class bethrown : MonoBehaviour
 
     }
 
-  
+  public void Changepitch()
+    {
+        p = p * -1;
+    }
 
     public void launch()
     {
@@ -36,7 +42,11 @@ public class bethrown : MonoBehaviour
             t += Time.deltaTime;
            
             balltransform.localScale = Vector2.one * (t / 10);
-            balltransform.position = Vector2.Lerp(start.position, glove.position, curve.Evaluate(t));
+            if (p == 1)
+            {
+                balltransform.position = Vector2.Lerp(start.position, glove.position, curve.Evaluate(t));
+            }
+            else balltransform.position = Vector2.Lerp(start.position, glove.position, fast.Evaluate(t));
             Debug.Log("throw");
             yield return null;
         }
