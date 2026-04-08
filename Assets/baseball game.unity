@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 56494860}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.12, y: 3, z: 0}
+  m_LocalPosition: {x: -0.28, y: 2.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -616,6 +616,7 @@ GameObject:
   - component: {fileID: 1713001805}
   - component: {fileID: 1713001804}
   - component: {fileID: 1713001803}
+  - component: {fileID: 1713001806}
   m_Layer: 0
   m_Name: frame_01_0
   m_TagString: Untagged
@@ -719,6 +720,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1713001806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713001802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef31c67e6b512c4b9e91567ebb5bf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::bethrown
+  start: {fileID: 56494861}
+  glove: {fileID: 905940072}
+  t: 0
+  balltransform: {fileID: 404309313819429433}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 14.578201
+      outSlope: 14.578201
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.014440745
+      value: 0.21052009
+      inSlope: 10.612177
+      outSlope: 10.612177
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.0921499
+      value: 0.72698694
+      inSlope: 0.72946507
+      outSlope: 0.72946507
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.30072483
+      outSlope: 0.30072483
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &404309313819429432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -732,12 +791,20 @@ PrefabInstance:
       value: Baseball
       objectReference: {fileID: 0}
     - target: {fileID: 6531406198494785843, guid: 72b726c23ba6e764daffaf6dbbe329c3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531406198494785843, guid: 72b726c23ba6e764daffaf6dbbe329c3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531406198494785843, guid: 72b726c23ba6e764daffaf6dbbe329c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1
+      value: -10.89
       objectReference: {fileID: 0}
     - target: {fileID: 6531406198494785843, guid: 72b726c23ba6e764daffaf6dbbe329c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6300001
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6531406198494785843, guid: 72b726c23ba6e764daffaf6dbbe329c3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -871,11 +938,17 @@ PrefabInstance:
       propertyPath: curve.m_Curve.Array.data[2].tangentMode
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8216007791499997588, guid: 72b726c23ba6e764daffaf6dbbe329c3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72b726c23ba6e764daffaf6dbbe329c3, type: 3}
+--- !u!4 &404309313819429433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6531406198494785843, guid: 72b726c23ba6e764daffaf6dbbe329c3, type: 3}
+  m_PrefabInstance: {fileID: 404309313819429432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
