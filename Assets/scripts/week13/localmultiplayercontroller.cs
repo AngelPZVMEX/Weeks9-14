@@ -1,4 +1,5 @@
 using System;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,7 @@ public class localmultiplayercontroller : MonoBehaviour
     public Boolean isDead = false;
     public SpriteRenderer spriteRenderer;
     public Color color;
+    public CinemachineImpulseSource impulse;
     void Start()
     {
         color = spriteRenderer.color;
@@ -61,6 +63,7 @@ public class localmultiplayercontroller : MonoBehaviour
     public void takeDamage()
     {
         health--;
+        impulse.GenerateImpulse();
     }
 
 }
