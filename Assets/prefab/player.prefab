@@ -105,9 +105,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcb91b335ac4c446b6de396bbf77e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::localmultiplayercontroller
+  manager: {fileID: 0}
   playerInput: {fileID: 1441124521390137082}
   moveInput: {x: 0, y: 0}
   speed: 5
+  health: 5
+  isDead: 0
+  spriteRenderer: {fileID: 2408539117174651177}
 --- !u!114 &1441124521390137082
 MonoBehaviour:
   m_ObjectHideFlags: 0

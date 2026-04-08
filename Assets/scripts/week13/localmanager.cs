@@ -32,8 +32,10 @@ public class localmanager : MonoBehaviour
 
     public void PlayerAttacking(PlayerInput attackingPLayer)
     {
-        for( int i = 0; i < players.Count; i++ )
+        
+        for ( int i = 0; i < players.Count; i++ )
         {
+            localmultiplayercontroller controller = players[i].GetComponent<localmultiplayercontroller>();
             if (attackingPLayer == players[i]) continue;
            
 
@@ -41,8 +43,10 @@ public class localmanager : MonoBehaviour
           if(  Vector2.Distance(attackingPLayer.transform.position, players[i].transform.position) < 0.5)
             {
                 Debug.Log("Player " + attackingPLayer.playerIndex + "hit player " + players[i].playerIndex);
+                controller.takeDamage();
             }
 
         }
+        
     }
 }
