@@ -10,6 +10,7 @@ public class glove : MonoBehaviour
     public SpriteRenderer button;
     public bool isinButton = false;
     public UnityEvent onButton;
+    public Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,4 +48,8 @@ public class glove : MonoBehaviour
         movement = context.ReadValue<Vector2>();
     }
 
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger("pitch");
+    }
 }

@@ -15,7 +15,7 @@ public class bethrown : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        balltransform.localScale = Vector2.one;
+        
     }
 
     // Update is called once per frame
@@ -34,6 +34,8 @@ public class bethrown : MonoBehaviour
     {
         StartCoroutine(hurl());
     }
+
+
     IEnumerator hurl ()
     {
          t = 0;
@@ -41,7 +43,7 @@ public class bethrown : MonoBehaviour
         { 
             t += Time.deltaTime;
            
-            balltransform.localScale = Vector2.one * (t / 10);
+            balltransform.localScale = Vector2.one * t;
             if (p == 1)
             {
                 balltransform.position = Vector2.Lerp(start.position, glove.position, curve.Evaluate(t));
